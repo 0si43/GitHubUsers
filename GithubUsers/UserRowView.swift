@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserRowView: View {
     let user: GitHubUser
-    
+
     var body: some View {
         HStack(spacing: 12) {
             AsyncImage(url: URL(string: user.avatarUrl)) { image in
