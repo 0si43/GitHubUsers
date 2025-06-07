@@ -19,7 +19,7 @@ final class UserDetailViewModel {
         self.userId = userId
         self.gitHubService = gitHubService
     }
-
+    
     func fetchUser() async {
         user = try! await gitHubService.fetchUser(id: userId)
     }

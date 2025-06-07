@@ -26,7 +26,12 @@ struct UserListView: View {
             }
             .navigationTitle("GitHub Users")
             .navigationDestination(for: GitHubUser.self) { user in
-                UserDetailView(user: user, repositories: [])
+                UserDetailView(
+                    viewModel: UserDetailViewModel(
+                        userId: user.id,
+                        gitHubService: GitHubService()
+                    )
+                )
             }
             .task {
                 await viewModel.fetchUsers()
