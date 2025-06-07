@@ -14,30 +14,22 @@
 			remoteGlobalIDString = A68DB5222DF267B2003FA815;
 			remoteInfo = GithubUsers;
 		};
-		A68DB53B2DF267B3003FA815 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A68DB51B2DF267B2003FA815 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A68DB5222DF267B2003FA815;
-			remoteInfo = GithubUsers;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A68DB5232DF267B2003FA815 /* GithubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A68DB5302DF267B3003FA815 /* GithubUsersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUsersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A68DB53A2DF267B3003FA815 /* GithubUsersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUsersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68DB5232DF267B2003FA815 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68DB5302DF267B3003FA815 /* GitHubUsersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUsersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A68DB5252DF267B2003FA815 /* GithubUsers */ = {
+		A68DB5252DF267B2003FA815 /* GitHubUsers */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GithubUsers;
+			path = GitHubUsers;
 			sourceTree = "<group>";
 		};
-		A68DB5332DF267B3003FA815 /* GithubUsersTests */ = {
+		A68DB5332DF267B3003FA815 /* GitHubUsersTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GithubUsersTests;
+			path = GitHubUsersTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -57,21 +49,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A68DB5372DF267B3003FA815 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A68DB51A2DF267B2003FA815 = {
 			isa = PBXGroup;
 			children = (
-				A68DB5252DF267B2003FA815 /* GithubUsers */,
-				A68DB5332DF267B3003FA815 /* GithubUsersTests */,
+				A68DB5252DF267B2003FA815 /* GitHubUsers */,
+				A68DB5332DF267B3003FA815 /* GitHubUsersTests */,
 				A68DB5242DF267B2003FA815 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,9 +64,8 @@
 		A68DB5242DF267B2003FA815 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A68DB5232DF267B2003FA815 /* GithubUsers.app */,
-				A68DB5302DF267B3003FA815 /* GithubUsersTests.xctest */,
-				A68DB53A2DF267B3003FA815 /* GithubUsersUITests.xctest */,
+				A68DB5232DF267B2003FA815 /* GitHubUsers.app */,
+				A68DB5302DF267B3003FA815 /* GitHubUsersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A68DB5222DF267B2003FA815 /* GithubUsers */ = {
+		A68DB5222DF267B2003FA815 /* GitHubUsers */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A68DB5442DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GithubUsers" */;
+			buildConfigurationList = A68DB5442DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GitHubUsers" */;
 			buildPhases = (
 				A68DB51F2DF267B2003FA815 /* Sources */,
 				A68DB5202DF267B2003FA815 /* Frameworks */,
@@ -102,18 +86,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A68DB5252DF267B2003FA815 /* GithubUsers */,
+				A68DB5252DF267B2003FA815 /* GitHubUsers */,
 			);
-			name = GithubUsers;
+			name = GitHubUsers;
 			packageProductDependencies = (
 			);
 			productName = GithubUsers;
-			productReference = A68DB5232DF267B2003FA815 /* GithubUsers.app */;
+			productReference = A68DB5232DF267B2003FA815 /* GitHubUsers.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A68DB52F2DF267B3003FA815 /* GithubUsersTests */ = {
+		A68DB52F2DF267B3003FA815 /* GitHubUsersTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A68DB5472DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GithubUsersTests" */;
+			buildConfigurationList = A68DB5472DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GitHubUsersTests" */;
 			buildPhases = (
 				A68DB52C2DF267B3003FA815 /* Sources */,
 				A68DB52D2DF267B3003FA815 /* Frameworks */,
@@ -125,34 +109,14 @@
 				A68DB5322DF267B3003FA815 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A68DB5332DF267B3003FA815 /* GithubUsersTests */,
+				A68DB5332DF267B3003FA815 /* GitHubUsersTests */,
 			);
-			name = GithubUsersTests;
+			name = GitHubUsersTests;
 			packageProductDependencies = (
 			);
 			productName = GithubUsersTests;
-			productReference = A68DB5302DF267B3003FA815 /* GithubUsersTests.xctest */;
+			productReference = A68DB5302DF267B3003FA815 /* GitHubUsersTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A68DB5392DF267B3003FA815 /* GithubUsersUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A68DB54A2DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GithubUsersUITests" */;
-			buildPhases = (
-				A68DB5362DF267B3003FA815 /* Sources */,
-				A68DB5372DF267B3003FA815 /* Frameworks */,
-				A68DB5382DF267B3003FA815 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A68DB53C2DF267B3003FA815 /* PBXTargetDependency */,
-			);
-			name = GithubUsersUITests;
-			packageProductDependencies = (
-			);
-			productName = GithubUsersUITests;
-			productReference = A68DB53A2DF267B3003FA815 /* GithubUsersUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -171,13 +135,9 @@
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = A68DB5222DF267B2003FA815;
 					};
-					A68DB5392DF267B3003FA815 = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = A68DB5222DF267B2003FA815;
-					};
 				};
 			};
-			buildConfigurationList = A68DB51E2DF267B2003FA815 /* Build configuration list for PBXProject "GithubUsers" */;
+			buildConfigurationList = A68DB51E2DF267B2003FA815 /* Build configuration list for PBXProject "GitHubUsers" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -191,9 +151,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A68DB5222DF267B2003FA815 /* GithubUsers */,
-				A68DB52F2DF267B3003FA815 /* GithubUsersTests */,
-				A68DB5392DF267B3003FA815 /* GithubUsersUITests */,
+				A68DB5222DF267B2003FA815 /* GitHubUsers */,
+				A68DB52F2DF267B3003FA815 /* GitHubUsersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -207,13 +166,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A68DB52E2DF267B3003FA815 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A68DB5382DF267B3003FA815 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,25 +189,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A68DB5362DF267B3003FA815 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		A68DB5322DF267B3003FA815 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A68DB5222DF267B2003FA815 /* GithubUsers */;
+			target = A68DB5222DF267B2003FA815 /* GitHubUsers */;
 			targetProxy = A68DB5312DF267B3003FA815 /* PBXContainerItemProxy */;
-		};
-		A68DB53C2DF267B3003FA815 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A68DB5222DF267B2003FA815 /* GithubUsers */;
-			targetProxy = A68DB53B2DF267B3003FA815 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -402,7 +342,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GithubUsers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GitHubUsers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -431,7 +371,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GithubUsers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GitHubUsers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -449,7 +389,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GithubUsersTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GitHubUsersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -468,7 +408,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GithubUsersTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GitHubUsersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -477,44 +417,10 @@
 			};
 			name = Release;
 		};
-		A68DB54B2DF267B3003FA815 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JDTR4Y333X;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GithubUsersUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GithubUsers;
-			};
-			name = Debug;
-		};
-		A68DB54C2DF267B3003FA815 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JDTR4Y333X;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shetommy.GithubUsersUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GithubUsers;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A68DB51E2DF267B2003FA815 /* Build configuration list for PBXProject "GithubUsers" */ = {
+		A68DB51E2DF267B2003FA815 /* Build configuration list for PBXProject "GitHubUsers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A68DB5422DF267B3003FA815 /* Debug */,
@@ -523,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A68DB5442DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GithubUsers" */ = {
+		A68DB5442DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GitHubUsers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A68DB5452DF267B3003FA815 /* Debug */,
@@ -532,20 +438,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A68DB5472DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GithubUsersTests" */ = {
+		A68DB5472DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GitHubUsersTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A68DB5482DF267B3003FA815 /* Debug */,
 				A68DB5492DF267B3003FA815 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A68DB54A2DF267B3003FA815 /* Build configuration list for PBXNativeTarget "GithubUsersUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A68DB54B2DF267B3003FA815 /* Debug */,
-				A68DB54C2DF267B3003FA815 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
