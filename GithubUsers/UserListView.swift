@@ -12,17 +12,14 @@ struct UserListView: View {
     init(viewModel: UserListViewModel) {
         self.viewModel = viewModel
     }
-    
-    
+
     var body: some View {
         NavigationView {
             List(viewModel.users) { user in
                 Button(action: {
-                    if let url = URL(string: user.htmlUrl) {
-                        UIApplication.shared.open(url)
-                    }
+                    // FIXME: -
                 }) {
-//                            UserRowView(user: user)
+                    UserRowView(user: user)
                 }
                 .buttonStyle(.plain)
             }
@@ -44,7 +41,6 @@ struct UserListView: View {
         GitHubUser(id: 1, login: "", avatarUrl: "", htmlUrl: "", type: ""),
         GitHubUser(id: 2, login: "", avatarUrl: "", htmlUrl: "", type: ""),
         GitHubUser(id: 3, login: "", avatarUrl: "", htmlUrl: "", type: "")
-        
     ]
     let viewModel = UserListViewModel(gitHubService: gitHubService)
     return UserListView(viewModel: viewModel)
