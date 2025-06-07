@@ -14,7 +14,7 @@ struct UserDetailView: View {
     private var nonForkedRepositories: [GitHubRepository] {
         repositories.filter { !$0.fork }
     }
-    
+
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -25,7 +25,7 @@ struct UserDetailView: View {
         .navigationTitle("Repositories")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
+
     private var userInfoSection: some View {
         VStack(spacing: 16) {
             AsyncImage(url: URL(string: user.avatarUrl)) { image in
@@ -42,7 +42,7 @@ struct UserDetailView: View {
             }
             .frame(width: 80, height: 80)
             .clipShape(Circle())
-            
+
             VStack(spacing: 8) {
                 Text(user.login)
                     .font(.title2)
