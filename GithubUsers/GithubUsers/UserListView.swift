@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct UserListView: View {
-    @Bindable private var viewModel = UserListViewModel()
+    @Bindable private var viewModel: UserListViewModel
+    init(viewModel: UserListViewModel) {
+        self.viewModel = viewModel
+    }
+    
     
     var body: some View {
         NavigationView {
@@ -20,7 +24,7 @@ struct UserListView: View {
                 }) {
 //                            UserRowView(user: user)
                 }
-                .buttonStyle(PlainButtonStyle())
+                .buttonStyle(.plain)
             }
             .refreshable {
                 await viewModel.fetchUsers()
@@ -35,5 +39,13 @@ struct UserListView: View {
 }
 
 #Preview {
-    UserListView()
+    let gitHubService = GitHubServiceMock()
+    gitHubService.users = [
+        GitHubUser(id: 1, login: "", avatarUrl: "", htmlUrl: "", type: ""),
+        GitHubUser(id: 2, login: "", avatarUrl: "", htmlUrl: "", type: ""),
+        GitHubUser(id: 3, login: "", avatarUrl: "", htmlUrl: "", type: "")
+        
+    ]
+    let viewModel = UserListViewModel(gitHubService: gitHubService)
+    return UserListView(viewModel: viewModel)
 }
