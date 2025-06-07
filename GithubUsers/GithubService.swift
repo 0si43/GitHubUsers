@@ -1,6 +1,6 @@
 //
-//  GithubService.swift
-//  GithubUsers
+//  GitHubService.swift
+//  GitHubUsers
 //
 //  Created by Nakajima on 2025/06/06.
 //

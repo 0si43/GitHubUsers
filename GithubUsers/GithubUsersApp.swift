@@ -1,6 +1,6 @@
 //
-//  GithubUsersApp.swift
-//  GithubUsers
+//  GitHubUsersApp.swift
+//  GitHubUsers
 //
 //  Created by Nakajima on 2025/06/06.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct GithubUsersApp: App {
+struct GitHubUsersApp: App {
     var body: some Scene {
         WindowGroup {
             UserListView(

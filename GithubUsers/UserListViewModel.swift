@@ -1,6 +1,6 @@
 //
 //  UserListViewModel.swift
-//  GithubUsers
+//  GitHubUsers
 //
 //  Created by Nakajima on 2025/06/07.
 //
