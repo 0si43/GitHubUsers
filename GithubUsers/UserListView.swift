@@ -37,7 +37,7 @@ struct UserListView: View {
 
 #Preview {
     let gitHubService = GitHubServiceMock()
-    gitHubService.users = [
+    gitHubService.stubUsers = [
         GitHubUser.mock(id: 1),
         GitHubUser.mock(id: 2),
         GitHubUser.mock(id: 3)

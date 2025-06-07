@@ -11,6 +11,7 @@ struct GitHubUser: Codable, Hashable, Identifiable {
     let name: String?
     let avatarUrl: String
     let htmlUrl: String
+    // detail information
     let followers: Int?
     let following: Int?
 
