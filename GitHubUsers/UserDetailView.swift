@@ -100,13 +100,21 @@ struct UserDetailView: View {
             await viewModel.fetchUser()
             await viewModel.fetchRepositories()
         }
+        .navigationDestination(for: GitHubRepository.self) { repository in
+            WebView(urlString: repository.htmlUrl)
+                .navigationTitle(repository.name)
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 
     private var repositoriesSection: some View {
         LazyVStack(spacing: 0) {
             ForEach(nonForkedRepositories.indices, id: \.self) { index in
                 let repository = nonForkedRepositories[index]
-                repositoryRow(repository: repository)
+                NavigationLink(value: repository) {
+                    repositoryRow(repository: repository)
+                }
+                .buttonStyle(.plain)
                 if index < nonForkedRepositories.count - 1 {
                     Divider()
                         .padding(.leading, 16)
