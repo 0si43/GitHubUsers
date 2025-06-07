@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct UserDetailView: View {
-    let user: GitHubUser
-    let repositories: [GitHubRepository]
-
+    @Bindable var viewModel: UserDetailViewModel
+    init(viewModel: UserDetailViewModel) {
+        self.viewModel = viewModel
+    }
+    
     private var nonForkedRepositories: [GitHubRepository] {
-        repositories.filter { !$0.fork }
+        viewModel.repositories.filter { !$0.fork }
     }
 
     var body: some View {
@@ -27,52 +29,63 @@ struct UserDetailView: View {
     }
 
     private var userInfoSection: some View {
-        VStack(spacing: 16) {
-            AsyncImage(url: URL(string: user.avatarUrl)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } placeholder: {
-                Circle()
-                    .fill(Color.gray.opacity(0.3))
-                    .overlay(
-                        Image(systemName: "person.fill")
-                            .foregroundColor(.gray)
-                    )
-            }
-            .frame(width: 80, height: 80)
-            .clipShape(Circle())
-
-            VStack(spacing: 8) {
-                Text(user.login)
-                    .font(.title2)
-                    .fontWeight(.bold)
-
-                if let name = user.name, !name.isEmpty {
-                    Text(name)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-
-                HStack(spacing: 24) {
-                    VStack(spacing: 4) {
-                        Text("\(user.followers)")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                        Text("Followers")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+        Group {
+            if let user = viewModel.user {
+                VStack(spacing: 16) {
+                    AsyncImage(url: URL(string: user.avatarUrl)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Circle()
+                            .fill(Color.gray.opacity(0.3))
+                            .overlay(
+                                Image(systemName: "person.fill")
+                                    .foregroundColor(.gray)
+                            )
                     }
-
-                    VStack(spacing: 4) {
-                        Text("\(user.following)")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                        Text("Following")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                    .frame(width: 80, height: 80)
+                    .clipShape(Circle())
+                    
+                    VStack(spacing: 8) {
+                        Text(user.login)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        
+                        if let name = user.name, !name.isEmpty {
+                            Text(name)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        HStack(spacing: 24) {
+                            VStack(spacing: 4) {
+                                if let followers = user.followers {
+                                    Text("\(followers)")
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
+                                    Text("Followers")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            VStack(spacing: 4) {
+                                if let following = user.following {
+                                    Text("\(following)")
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
+                                    Text("Following")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                        }
                     }
                 }
+            } else {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                    .scaleEffect(1.5)
             }
         }
         .padding()
@@ -83,6 +96,9 @@ struct UserDetailView: View {
                 .foregroundColor(Color(.separator)),
             alignment: .bottom
         )
+        .task {
+            await viewModel.fetchUser()
+        }
     }
 
     private var repositoriesSection: some View {
@@ -170,5 +186,8 @@ struct UserDetailView: View {
 }
 
 #Preview {
-    UserDetailView(user: GitHubUser.mock(id: 1), repositories: [])
+    let gitHubService = GitHubServiceMock()
+    gitHubService.stubUser = GitHubUser.mock(id: 1)
+    let viewModel = UserDetailViewModel(userId: 1, gitHubService: gitHubService)
+    return UserDetailView(viewModel: viewModel)
 }
