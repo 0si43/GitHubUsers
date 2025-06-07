@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  GithubUsers
+//  GitHubUsers
 //
 //  Created by Nakajima on 2025/06/06.
 //
@@ -14,12 +14,10 @@ struct UserListView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(viewModel.users) { user in
-                Button(action: {
-                    // FIXME: -
-                }) {
-                    UserRowView(user: user)
+                NavigationLink(value: user) {
+                     UserRowView(user: user)
                 }
                 .buttonStyle(.plain)
             }
@@ -27,7 +25,14 @@ struct UserListView: View {
                 await viewModel.fetchUsers()
             }
             .navigationTitle("GitHub Users")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationDestination(for: GitHubUser.self) { user in
+                UserDetailView(
+                    viewModel: UserDetailViewModel(
+                        userId: user.id,
+                        gitHubService: GitHubService()
+                    )
+                )
+            }
             .task {
                 await viewModel.fetchUsers()
             }
@@ -37,10 +42,10 @@ struct UserListView: View {
 
 #Preview {
     let gitHubService = GitHubServiceMock()
-    gitHubService.users = [
-        GitHubUser(id: 1, login: "", avatarUrl: "", htmlUrl: "", type: ""),
-        GitHubUser(id: 2, login: "", avatarUrl: "", htmlUrl: "", type: ""),
-        GitHubUser(id: 3, login: "", avatarUrl: "", htmlUrl: "", type: "")
+    gitHubService.stubUsers = [
+        GitHubUser.mock(id: 1),
+        GitHubUser.mock(id: 2),
+        GitHubUser.mock(id: 3)
     ]
     let viewModel = UserListViewModel(gitHubService: gitHubService)
     return UserListView(viewModel: viewModel)

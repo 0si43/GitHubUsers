@@ -1,6 +1,6 @@
 //
 //  UserListViewModel.swift
-//  GithubUsers
+//  GitHubUsers
 //
 //  Created by Nakajima on 2025/06/07.
 //
@@ -18,7 +18,10 @@ final class UserListViewModel {
     }
 
     func fetchUsers() async {
-        users = try! await gitHubService.fetchUsers(pageNumber: 0)
-        print(users)
+        do {
+            users = try await gitHubService.fetchUsers(pageNumber: 0)
+        } catch {
+            print(error)
+        }
     }
 }

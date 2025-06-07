@@ -1,14 +1,14 @@
 //
-//  GithubUsersTests.swift
-//  GithubUsersTests
+//  GitHubUsersTests.swift
+//  GitHubUsersTests
 //
 //  Created by Nakajima on 2025/06/06.
 //
 
 import XCTest
-@testable import GithubUsers
+@testable import GitHubUsers
 
-final class GithubUsersTests: XCTestCase {
+final class GitHubUsersTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
