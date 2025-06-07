@@ -19,6 +19,5 @@ final class UserListViewModel {
 
     func fetchUsers() async {
         users = try! await gitHubService.fetchUsers(pageNumber: 0)
-        print(users)
     }
 }
