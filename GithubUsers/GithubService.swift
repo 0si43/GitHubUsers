@@ -22,6 +22,10 @@ private struct GitHubAPIConfig {
             [:]
         }
     }
+    
+    static func usersURL(since: Int) -> URL? {
+        URL(string: "\(GitHubAPIConfig.baseURL)/users?since=\(since)")
+    }
 }
 
 protocol GitHubServiceProtocol {
@@ -30,18 +34,17 @@ protocol GitHubServiceProtocol {
 
 class GitHubService: GitHubServiceProtocol {
     func fetchUsers(pageNumber: Int) async throws -> [GitHubUser] {
-        let url = URL(string: "\(GitHubAPIConfig.baseURL)/users?since=\(pageNumber)")!
+        guard let url = GitHubAPIConfig.usersURL(since: pageNumber) else { return [] }
         let request = makeRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: request)
         
-        let (data, _) = try await URLSession.shared.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
         
-//        guard let httpResponse = response as? HTTPURLResponse else {
-//            throw APIError.invalidResponse
-//        }
-//        
-//        guard httpResponse.statusCode == 200 else {
-//            throw APIError.httpError(httpResponse.statusCode)
-//        }
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.httpError(httpResponse.statusCode)
+        }
 
         return try JSONDecoder().decode([GitHubUser].self, from: data)
     }
@@ -51,7 +54,6 @@ class GitHubService: GitHubServiceProtocol {
         for (key, value) in GitHubAPIConfig.authHeaders {
             request.setValue(value, forHTTPHeaderField: key)
         }
-        request.setValue("GitHubSampleApp/1.0", forHTTPHeaderField: "User-Agent")
         return request
     }
 }
