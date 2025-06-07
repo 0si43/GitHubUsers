@@ -41,5 +41,15 @@ struct UserRowView: View {
 }
 
 #Preview {
-    UserRowView(user: GitHubUser(id: 1, login: "aaa", avatarUrl: "aaa", htmlUrl: "", type: ""))
+    UserRowView(
+        user: GitHubUser(
+            id: 1,
+            login: "id",
+            name: "John Doe",
+            avatarUrl: "",
+            htmlUrl: "",
+            followers: 100,
+            following: 200
+        )
+    )
 }
