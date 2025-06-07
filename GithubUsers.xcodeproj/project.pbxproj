@@ -22,14 +22,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A68DB5252DF267B2003FA815 /* GithubUsers */ = {
+		A68DB5252DF267B2003FA815 /* GitHubUsers */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GithubUsers;
+			path = GitHubUsers;
 			sourceTree = "<group>";
 		};
-		A68DB5332DF267B3003FA815 /* GithubUsersTests */ = {
+		A68DB5332DF267B3003FA815 /* GitHubUsersTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GithubUsersTests;
+			path = GitHubUsersTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -55,8 +55,8 @@
 		A68DB51A2DF267B2003FA815 = {
 			isa = PBXGroup;
 			children = (
-				A68DB5252DF267B2003FA815 /* GithubUsers */,
-				A68DB5332DF267B3003FA815 /* GithubUsersTests */,
+				A68DB5252DF267B2003FA815 /* GitHubUsers */,
+				A68DB5332DF267B3003FA815 /* GitHubUsersTests */,
 				A68DB5242DF267B2003FA815 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +86,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A68DB5252DF267B2003FA815 /* GithubUsers */,
+				A68DB5252DF267B2003FA815 /* GitHubUsers */,
 			);
 			name = GitHubUsers;
 			packageProductDependencies = (
@@ -109,7 +109,7 @@
 				A68DB5322DF267B3003FA815 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A68DB5332DF267B3003FA815 /* GithubUsersTests */,
+				A68DB5332DF267B3003FA815 /* GitHubUsersTests */,
 			);
 			name = GitHubUsersTests;
 			packageProductDependencies = (
