@@ -12,6 +12,12 @@ protocol APIClientProtocol {
 }
 
 final class APIClient: APIClientProtocol {
+    private var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }
+    
     func send<T: Decodable>(_ request: URLRequest) async throws -> T {
         let (data, response) = try await URLSession.shared.data(for: request)
 
@@ -22,7 +28,7 @@ final class APIClient: APIClientProtocol {
         guard httpResponse.statusCode == 200 else {
             throw APIError.httpError(httpResponse.statusCode)
         }
-        
-        return try JSONDecoder().decode(T.self, from: data)
+
+        return try decoder.decode(T.self, from: data)
     }
 }

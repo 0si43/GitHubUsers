@@ -7,7 +7,6 @@
 
 import Foundation
 
-// https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28
 struct GitHubAPIConfig {
     static let baseURL = "https://api.github.com"
     
@@ -22,19 +21,27 @@ struct GitHubAPIConfig {
             [:]
         }
     }
-    
+
+    // https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28
     static func usersURL(since: Int) -> URL? {
         URL(string: "\(GitHubAPIConfig.baseURL)/users?since=\(since)")
     }
     
+    // https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#get-a-user-using-their-id
     static func userURL(for id: Int) -> URL? {
         URL(string: "\(GitHubAPIConfig.baseURL)/user/\(id)")
+    }
+    
+    // https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user
+    static func repositoriesURL(username: String) -> URL? {
+        URL(string: "\(GitHubAPIConfig.baseURL)/users/\(username)/repos")
     }
 }
 
 protocol GitHubServiceProtocol {
     func fetchUsers(pageNumber: Int) async throws -> [GitHubUser]
     func fetchUser(id: Int) async throws -> GitHubUser
+    func fetchRepositories(username: String) async throws -> [GitHubRepository]
 }
 
 final class GitHubService: GitHubServiceProtocol {
@@ -51,6 +58,12 @@ final class GitHubService: GitHubServiceProtocol {
 
     func fetchUser(id: Int) async throws -> GitHubUser {
         guard let url = GitHubAPIConfig.userURL(for: id) else { fatalError("confirm userURL") }
+        let request = makeRequest(url: url)
+        return try await apiClient.send(request)
+    }
+
+    func fetchRepositories(username: String) async throws -> [GitHubRepository] {
+        guard let url = GitHubAPIConfig.repositoriesURL(username: username) else { fatalError("confirm repositoriesURL") }
         let request = makeRequest(url: url)
         return try await apiClient.send(request)
     }

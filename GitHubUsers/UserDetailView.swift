@@ -98,6 +98,7 @@ struct UserDetailView: View {
         )
         .task {
             await viewModel.fetchUser()
+            await viewModel.fetchRepositories()
         }
     }
 

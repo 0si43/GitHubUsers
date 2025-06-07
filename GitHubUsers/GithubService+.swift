@@ -23,6 +23,11 @@ class GitHubServiceMock: GitHubServiceProtocol {
             throw NSError()
         }
     }
+    
+    var stubRepositories: [GitHubRepository] = []
+    func fetchRepositories(username: String) async throws -> [GitHubRepository] {
+        stubRepositories
+    }
 }
 
 private extension GitHubService {
