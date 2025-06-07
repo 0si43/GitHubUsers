@@ -32,9 +32,6 @@ struct UserRowView: View {
                 .fontWeight(.medium)
                 .foregroundColor(.primary)
             Spacer()
-            Image(systemName: "chevron.right")
-                .font(.caption)
-                .foregroundColor(.secondary)
         }
         .padding(.vertical, 4)
     }

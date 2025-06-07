@@ -5,7 +5,7 @@
 //  Created by Nakajima on 2025/06/06.
 //
 
-struct GitHubUser: Codable, Identifiable {
+struct GitHubUser: Codable, Hashable, Identifiable {
     let id: Int
     let login: String
     let name: String?

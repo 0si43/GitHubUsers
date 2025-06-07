@@ -14,12 +14,10 @@ struct UserListView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(viewModel.users) { user in
-                Button(action: {
-                    // FIXME: -
-                }) {
-                    UserRowView(user: user)
+                NavigationLink(value: user) {
+                     UserRowView(user: user)
                 }
                 .buttonStyle(.plain)
             }
@@ -27,7 +25,9 @@ struct UserListView: View {
                 await viewModel.fetchUsers()
             }
             .navigationTitle("GitHub Users")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationDestination(for: GitHubUser.self) { user in
+                UserDetailView(user: user, repositories: [])
+            }
             .task {
                 await viewModel.fetchUsers()
             }
