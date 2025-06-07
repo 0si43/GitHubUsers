@@ -89,13 +89,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-# env
-.env.local
-.env.*.local
-.env
-.env.production
-.env.development
-
 # other
 *.xcworkspace/*
 !*.xcworkspace/contents.xcworkspacedata 
