@@ -5,7 +5,7 @@
 //  Created by Nakajima on 2025/06/07.
 //
 
-struct GitHubRepository {
+struct GitHubRepository: Codable {
     let name: String
     let language: String?
     let stargazersCount: Int

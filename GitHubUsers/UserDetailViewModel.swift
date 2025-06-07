@@ -21,6 +21,20 @@ final class UserDetailViewModel {
     }
     
     func fetchUser() async {
-        user = try! await gitHubService.fetchUser(id: userId)
+        do {
+            user = try await gitHubService.fetchUser(id: userId)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func fetchRepositories() async {
+        guard let user else { return }
+        do {
+            repositories = try await gitHubService.fetchRepositories(username: user.login)
+        } catch {
+            print(error)
+        }
+        
     }
 }
