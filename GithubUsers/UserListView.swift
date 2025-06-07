@@ -38,9 +38,9 @@ struct UserListView: View {
 #Preview {
     let gitHubService = GitHubServiceMock()
     gitHubService.users = [
-        GitHubUser(id: 1, login: "", avatarUrl: "", htmlUrl: "", type: ""),
-        GitHubUser(id: 2, login: "", avatarUrl: "", htmlUrl: "", type: ""),
-        GitHubUser(id: 3, login: "", avatarUrl: "", htmlUrl: "", type: "")
+        GitHubUser.mock(id: 1),
+        GitHubUser.mock(id: 2),
+        GitHubUser.mock(id: 3)
     ]
     let viewModel = UserListViewModel(gitHubService: gitHubService)
     return UserListView(viewModel: viewModel)
