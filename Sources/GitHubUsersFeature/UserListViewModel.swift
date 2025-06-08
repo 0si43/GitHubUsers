@@ -12,6 +12,7 @@ import SwiftUI
 public final class UserListViewModel {
     private let gitHubService: GitHubServiceProtocol
     var users: [GitHubUser] = []
+    var isLast: Bool = false
     var isLoading = false
     var errorMessage: String?
     public init(gitHubService: GitHubServiceProtocol) {
@@ -29,7 +30,9 @@ public final class UserListViewModel {
     func fetchNextUsers() async {
         guard let lastUser = users.last else { return }
         do {
-            users += try await gitHubService.fetchUsers(startId: lastUser.id)
+            let users = try await gitHubService.fetchUsers(startId: lastUser.id)
+            self.users += users
+            isLast = users.isEmpty
         } catch {
             print(error)
         }
