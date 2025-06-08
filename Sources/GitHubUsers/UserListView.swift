@@ -5,15 +5,16 @@
 //  Created by Nakajima on 2025/06/06.
 //
 
+import Models
 import SwiftUI
 
-struct UserListView: View {
+public struct UserListView: View {
     @Bindable private var viewModel: UserListViewModel
-    init(viewModel: UserListViewModel) {
+    public init(viewModel: UserListViewModel) {
         self.viewModel = viewModel
     }
 
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             List(viewModel.users) { user in
                 NavigationLink(value: user) {
