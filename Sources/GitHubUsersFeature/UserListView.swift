@@ -37,6 +37,7 @@ public struct UserListView: View {
             .refreshable {
                 await viewModel.fetchUsers()
             }
+            .loading($viewModel.isLoading)
             .navigationTitle("GitHub Users")
             .navigationDestination(for: GitHubUser.self) { user in
                 UserDetailView(

@@ -22,6 +22,11 @@ final class UserDetailViewModel {
     }
     
     func fetchUser() async {
+        isLoading = true
+        defer {
+            isLoading = false
+        }
+
         do {
             user = try await gitHubService.fetchUser(id: userId)
         } catch {
@@ -31,6 +36,11 @@ final class UserDetailViewModel {
     
     func fetchRepositories() async {
         guard let user else { return }
+        isLoading = true
+        defer {
+            isLoading = false
+        }
+
         do {
             repositories = try await gitHubService.fetchRepositories(username: user.login)
         } catch {
