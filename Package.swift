@@ -1,4 +1,4 @@
-  // swift-tools-version:5.9
+  // swift-tools-version:6.0
 
 import Foundation
 import PackageDescription
@@ -7,10 +7,7 @@ import PackageDescription
 var package = Package(
   name: "GitHubUsersFeature",
   platforms: [
-    .iOS(.v17),
-    .macOS(.v14),
-    .tvOS(.v17),
-    .watchOS(.v10),
+    .iOS(.v18),
   ],
   products: [
     .library(name: "GitHubUsersFeature", targets: ["GitHubUsersFeature"]),
