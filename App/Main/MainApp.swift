@@ -5,7 +5,7 @@
 //  Created by Nakajima on 2025/06/06.
 //
 
-import GitHubUsers
+import GitHubUsersFeature
 import SwiftUI
 
 @main

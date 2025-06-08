@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A645D6072DF5402C003DC770 /* GitHubUsersFeature in Frameworks */ = {isa = PBXBuildFile; productRef = A645D6062DF5402C003DC770 /* GitHubUsersFeature */; };
+		A671F2E62DF59681001E451B /* AppFeature in Resources */ = {isa = PBXBuildFile; fileRef = A671F2E52DF59681001E451B /* AppFeature */; };
+		A6A2190C2DF59761009FB14E /* GitHubUsersFeature in Frameworks */ = {isa = PBXBuildFile; productRef = A6A2190B2DF59761009FB14E /* GitHubUsersFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A645D5DE2DF53F8A003DC770 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6F4A7F12DF5942300AFDCFA /* GitHubUsers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GitHubUsers; path = ../GitHubUsers; sourceTree = SOURCE_ROOT; };
+		A671F2E52DF59681001E451B /* AppFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppFeature; path = ../AppFeature; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -28,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A645D6072DF5402C003DC770 /* GitHubUsersFeature in Frameworks */,
+				A6A2190C2DF59761009FB14E /* GitHubUsersFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +39,9 @@
 		A68DB51A2DF267B2003FA815 = {
 			isa = PBXGroup;
 			children = (
-				A6F4A7F12DF5942300AFDCFA /* GitHubUsers */,
+				A671F2E52DF59681001E451B /* AppFeature */,
 				A645D5DF2DF53F8A003DC770 /* Main */,
+				A6A2190A2DF59761009FB14E /* Frameworks */,
 				A68DB5242DF267B2003FA815 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +52,13 @@
 				A645D5DE2DF53F8A003DC770 /* GitHubUsers.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A6A2190A2DF59761009FB14E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,7 +81,7 @@
 			);
 			name = GitHubUsers;
 			packageProductDependencies = (
-				A645D6062DF5402C003DC770 /* GitHubUsersFeature */,
+				A6A2190B2DF59761009FB14E /* GitHubUsersFeature */,
 			);
 			productName = GitHubUsers;
 			productReference = A645D5DE2DF53F8A003DC770 /* GitHubUsers.app */;
@@ -103,7 +112,6 @@
 			mainGroup = A68DB51A2DF267B2003FA815;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A645D5D72DF53E91003DC770 /* XCLocalSwiftPackageReference "../../GitHubUsers" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A68DB5242DF267B2003FA815 /* Products */;
@@ -120,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A671F2E62DF59681001E451B /* AppFeature in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,17 +347,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		A645D5D72DF53E91003DC770 /* XCLocalSwiftPackageReference "../../GitHubUsers" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../GitHubUsers;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		A645D6062DF5402C003DC770 /* GitHubUsersFeature */ = {
+		A6A2190B2DF59761009FB14E /* GitHubUsersFeature */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A645D5D72DF53E91003DC770 /* XCLocalSwiftPackageReference "../../GitHubUsers" */;
 			productName = GitHubUsersFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
