@@ -21,6 +21,7 @@ public final class UserListViewModel {
     }
 
     func fetchUsers() async {
+        users = []
         isLoading = true
         defer {
             isLoading = false

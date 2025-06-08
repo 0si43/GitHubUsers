@@ -5,20 +5,33 @@
 //  Created by Nakajima on 2025/06/08.
 //
 
+@testable import GitHubUsersFeature
 import Testing
-import Models
 
+@MainActor
 struct UserListViewModelTest {
     let gitHubServiceMock: GitHubServiceMock = .init()
-    let userListViewModel = UserListViewModel(gitHubService: gitHubServiceMock)
+    let userListViewModel: UserListViewModel
     
-    @Test func fetchUsers() async throws {
-        gitHubServiceMock.users = []
-        #expect(false)
+    init() {
+        userListViewModel = UserListViewModel(gitHubService: gitHubServiceMock)
     }
     
     @Test func fetchUsers() async throws {
-        gitHubServiceMock.users = []
-        #expect(false)
+        let oldUser = GitHubUser.mock(id: -99)
+        userListViewModel.users = [oldUser]
+        let user = GitHubUser.mock(id: 1)
+        gitHubServiceMock.stubUsers = [user]
+        await userListViewModel.fetchUsers()
+        #expect(userListViewModel.users == [user])
+    }
+    
+    @Test func fetchNextUsers() async throws {
+        let oldUser = GitHubUser.mock(id: 1)
+        userListViewModel.users = [oldUser]
+        let newUser = GitHubUser.mock(id: 2)
+        gitHubServiceMock.stubUsers = [newUser]
+        await userListViewModel.fetchNextUsers()
+        #expect(userListViewModel.users == [oldUser, newUser])
     }
 }
