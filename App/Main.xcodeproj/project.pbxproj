@@ -12,12 +12,13 @@
 
 /* Begin PBXFileReference section */
 		A645D5DE2DF53F8A003DC770 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F4A7F12DF5942300AFDCFA /* GitHubUsers */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GitHubUsers; path = ../GitHubUsers; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A645D5DF2DF53F8A003DC770 /* GitHubUsers */ = {
+		A645D5DF2DF53F8A003DC770 /* Main */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GitHubUsers;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -37,7 +38,8 @@
 		A68DB51A2DF267B2003FA815 = {
 			isa = PBXGroup;
 			children = (
-				A645D5DF2DF53F8A003DC770 /* GitHubUsers */,
+				A6F4A7F12DF5942300AFDCFA /* GitHubUsers */,
+				A645D5DF2DF53F8A003DC770 /* Main */,
 				A68DB5242DF267B2003FA815 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +68,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A645D5DF2DF53F8A003DC770 /* GitHubUsers */,
+				A645D5DF2DF53F8A003DC770 /* Main */,
 			);
 			name = GitHubUsers;
 			packageProductDependencies = (
@@ -91,7 +93,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A68DB51E2DF267B2003FA815 /* Build configuration list for PBXProject "GitHubUsers" */;
+			buildConfigurationList = A68DB51E2DF267B2003FA815 /* Build configuration list for PBXProject "Main" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -325,7 +327,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A68DB51E2DF267B2003FA815 /* Build configuration list for PBXProject "GitHubUsers" */ = {
+		A68DB51E2DF267B2003FA815 /* Build configuration list for PBXProject "Main" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A68DB5422DF267B3003FA815 /* Debug */,
