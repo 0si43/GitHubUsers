@@ -22,82 +22,17 @@ struct UserDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                userInfoSection
-                repositoriesSection
+                if let user = viewModel.user {
+                    userInfoSection(user: user)
+                }
+                if !nonForkedRepositories.isEmpty {
+                    repositoriesSection
+                }
             }
         }
         .navigationTitle("Repositories".localized)
         .navigationBarTitleDisplayMode(.inline)
-    }
-
-    private var userInfoSection: some View {
-        Group {
-            if let user = viewModel.user {
-                VStack(spacing: 16) {
-                    AsyncImage(url: URL(string: user.avatarUrl)) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    } placeholder: {
-                        Circle()
-                            .fill(Color.gray.opacity(0.3))
-                            .overlay(
-                                Image(systemName: "person.fill")
-                                    .foregroundColor(.gray)
-                            )
-                    }
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    
-                    VStack(spacing: 8) {
-                        Text(user.login)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        
-                        if let name = user.name, !name.isEmpty {
-                            Text(name)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
-                        
-                        HStack(spacing: 24) {
-                            VStack(spacing: 4) {
-                                if let followers = user.followers {
-                                    Text("\(followers)")
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                    Text("Followers".localized)
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                }
-                            }
-                            VStack(spacing: 4) {
-                                if let following = user.following {
-                                    Text("\(following)")
-                                        .font(.headline)
-                                        .fontWeight(.semibold)
-                                    Text("Following".localized)
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                    .scaleEffect(1.5)
-            }
-        }
-        .padding()
-        .background(Color(.systemBackground))
-        .overlay(
-            Rectangle()
-                .frame(height: 1)
-                .foregroundColor(Color(.separator)),
-            alignment: .bottom
-        )
+        .loading($viewModel.isLoading)
         .task {
             await viewModel.fetchUser()
             await viewModel.fetchRepositories()
@@ -107,6 +42,65 @@ struct UserDetailView: View {
                 .navigationTitle(repository.name)
                 .navigationBarTitleDisplayMode(.inline)
         }
+    }
+
+    private func userInfoSection(user: GitHubUser) -> some View {
+        VStack(spacing: 16) {
+            AsyncImage(url: URL(string: user.avatarUrl)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                Circle()
+                    .fill(Color.gray.opacity(0.3))
+                    .overlay(
+                        Image(systemName: "person.fill")
+                            .foregroundColor(.gray)
+                    )
+            }
+            .frame(width: 80, height: 80)
+            .clipShape(Circle())
+            
+            VStack() {
+                Text(user.login)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                
+                if let name = user.name, !name.isEmpty {
+                    Text(name)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .padding(.bottom, 8)
+                }
+                
+                HStack(spacing: 24) {
+                    VStack() {
+                        if let followers = user.followers {
+                            Text("\(followers)")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                            Text("Followers".localized)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    VStack() {
+                        if let following = user.following {
+                            Text("\(following)")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                            Text("Following".localized)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+                Divider()
+                    .frame(width: 200)
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
     }
 
     private var repositoriesSection: some View {
