@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct LoadMoreFooterView: View {
-    var body: some View {
+public struct LoadMoreFooterView: View {
+    public init() {}
+    public var body: some View {
         HStack {
             Spacer()
             ProgressView()

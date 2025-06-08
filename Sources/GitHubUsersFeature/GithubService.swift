@@ -41,7 +41,7 @@ struct GitHubAPIConfig {
 }
 
 public protocol GitHubServiceProtocol {
-    func fetchUsers(pageNumber: Int) async throws -> [GitHubUser]
+    func fetchUsers(startId: Int) async throws -> [GitHubUser]
     func fetchUser(id: Int) async throws -> GitHubUser
     func fetchRepositories(username: String) async throws -> [GitHubRepository]
 }
@@ -52,8 +52,8 @@ public final class GitHubService: GitHubServiceProtocol {
         self.apiClient = apiClient
     }
     
-    public func fetchUsers(pageNumber: Int) async throws -> [GitHubUser] {
-        guard let url = GitHubAPIConfig.usersURL(since: pageNumber) else { fatalError("confirm usersURL") }
+    public func fetchUsers(startId: Int) async throws -> [GitHubUser] {
+        guard let url = GitHubAPIConfig.usersURL(since: startId) else { fatalError("confirm usersURL") }
         let request = makeRequest(url: url)
         return try await apiClient.send(request)
     }
