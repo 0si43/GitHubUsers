@@ -10,7 +10,7 @@ import SwiftUI
 
 @Observable @MainActor
 public final class UserListViewModel {
-    private let gitHubService: GitHubServiceProtocol
+    nonisolated private let gitHubService: GitHubServiceProtocol
     var users: [GitHubUser] = []
     var isLast: Bool = false
     var isLoading = false

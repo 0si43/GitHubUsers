@@ -10,7 +10,7 @@ import Models
 
 // MARK: - Test & Debug
 
-class GitHubServiceMock: GitHubServiceProtocol {
+class GitHubServiceMock: GitHubServiceProtocol, @unchecked Sendable {
     var stubUsers: [GitHubUser] = []
     func fetchUsers(startId: Int) async throws -> [GitHubUser] {
         stubUsers

@@ -5,7 +5,7 @@
 //  Created by Nakajima on 2025/06/06.
 //
 
-public struct GitHubUser: Codable, Hashable, Identifiable {
+public struct GitHubUser: Codable, Hashable, Identifiable, Sendable {
     public let id: Int
     public let login: String
     public let avatarUrl: String

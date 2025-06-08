@@ -40,7 +40,7 @@ struct GitHubAPIConfig {
     }
 }
 
-public protocol GitHubServiceProtocol {
+public protocol GitHubServiceProtocol: Sendable {
     func fetchUsers(startId: Int) async throws -> [GitHubUser]
     func fetchUser(id: Int) async throws -> GitHubUser
     func fetchRepositories(username: String) async throws -> [GitHubRepository]

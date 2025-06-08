@@ -11,7 +11,7 @@ import SwiftUI
 @Observable @MainActor
 final class UserDetailViewModel {
     let userId: Int
-    private let gitHubService: GitHubServiceProtocol
+    nonisolated private let gitHubService: GitHubServiceProtocol
     var user: GitHubUser?
     var repositories: [GitHubRepository] = []
     var isLoading = false
