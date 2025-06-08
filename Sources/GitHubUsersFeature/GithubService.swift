@@ -5,7 +5,9 @@
 //  Created by Nakajima on 2025/06/06.
 //
 
+import API
 import Foundation
+import Models
 
 struct GitHubAPIConfig {
     static let baseURL = "https://api.github.com"
@@ -38,31 +40,31 @@ struct GitHubAPIConfig {
     }
 }
 
-protocol GitHubServiceProtocol {
+public protocol GitHubServiceProtocol {
     func fetchUsers(pageNumber: Int) async throws -> [GitHubUser]
     func fetchUser(id: Int) async throws -> GitHubUser
     func fetchRepositories(username: String) async throws -> [GitHubRepository]
 }
 
-final class GitHubService: GitHubServiceProtocol {
+public final class GitHubService: GitHubServiceProtocol {
     private let apiClient: APIClientProtocol
-    init(apiClient: APIClientProtocol = APIClient()) {
+    public init(apiClient: APIClientProtocol = APIClient()) {
         self.apiClient = apiClient
     }
     
-    func fetchUsers(pageNumber: Int) async throws -> [GitHubUser] {
+    public func fetchUsers(pageNumber: Int) async throws -> [GitHubUser] {
         guard let url = GitHubAPIConfig.usersURL(since: pageNumber) else { fatalError("confirm usersURL") }
         let request = makeRequest(url: url)
         return try await apiClient.send(request)
     }
 
-    func fetchUser(id: Int) async throws -> GitHubUser {
+    public func fetchUser(id: Int) async throws -> GitHubUser {
         guard let url = GitHubAPIConfig.userURL(for: id) else { fatalError("confirm userURL") }
         let request = makeRequest(url: url)
         return try await apiClient.send(request)
     }
 
-    func fetchRepositories(username: String) async throws -> [GitHubRepository] {
+    public func fetchRepositories(username: String) async throws -> [GitHubRepository] {
         guard let url = GitHubAPIConfig.repositoriesURL(username: username) else { fatalError("confirm repositoriesURL") }
         let request = makeRequest(url: url)
         return try await apiClient.send(request)
