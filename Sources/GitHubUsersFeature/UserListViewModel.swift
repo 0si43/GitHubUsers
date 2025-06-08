@@ -14,7 +14,8 @@ public final class UserListViewModel {
     var users: [GitHubUser] = []
     var isLast: Bool = false
     var isLoading = false
-    var errorMessage: String?
+    var showAlert = false
+    var error: Error?
     public init(gitHubService: GitHubServiceProtocol) {
         self.gitHubService = gitHubService
     }
@@ -28,7 +29,8 @@ public final class UserListViewModel {
         do {
             users = try await gitHubService.fetchUsers(startId: 0)
         } catch {
-            print(error)
+            self.error = error
+            showAlert = true
         }
     }
     
@@ -44,7 +46,8 @@ public final class UserListViewModel {
             self.users += users
             isLast = users.isEmpty
         } catch {
-            print(error)
+            self.error = error
+            showAlert = true
         }
     }
 }

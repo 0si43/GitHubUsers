@@ -38,6 +38,7 @@ public struct UserListView: View {
                 await viewModel.fetchUsers()
             }
             .loading($viewModel.isLoading)
+            .showAlert($viewModel.showAlert, error: viewModel.error)
             .navigationTitle("GitHub Users")
             .navigationDestination(for: GitHubUser.self) { user in
                 UserDetailView(
