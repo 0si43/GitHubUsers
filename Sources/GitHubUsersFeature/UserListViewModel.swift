@@ -20,7 +20,16 @@ public final class UserListViewModel {
 
     func fetchUsers() async {
         do {
-            users = try await gitHubService.fetchUsers(pageNumber: 0)
+            users = try await gitHubService.fetchUsers(startId: 0)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func fetchNextUsers() async {
+        guard let lastUser = users.last else { return }
+        do {
+            users += try await gitHubService.fetchUsers(startId: lastUser.id)
         } catch {
             print(error)
         }
