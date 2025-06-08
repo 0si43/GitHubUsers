@@ -5,6 +5,7 @@
 //  Created by Nakajima on 2025/06/07.
 //
 
+import Models
 import SwiftUI
 
 struct UserRowView: View {
