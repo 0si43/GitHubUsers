@@ -25,7 +25,7 @@ public struct UserListView: View {
                     .buttonStyle(.plain)
                 }
 
-                if !viewModel.users.isEmpty {
+                if !viewModel.users.isEmpty, !viewModel.isLast {
                     LoadMoreFooterView()
                     .onAppear {
                         Task {
