@@ -5,7 +5,7 @@ import PackageDescription
 
 // MARK: - shared
 var package = Package(
-  name: "GitHubUsersFeature",
+  name: "AppFeature",
   platforms: [
     .iOS(.v18),
   ],
