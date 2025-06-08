@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A68FC3B12DF5320F005E3E39 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = A68FC3B02DF5320F005E3E39 /* AppFeature */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A68DB5312DF267B3003FA815 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68FC3B12DF5320F005E3E39 /* AppFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,7 @@
 			);
 			name = GitHubUsers;
 			packageProductDependencies = (
+				A68FC3B02DF5320F005E3E39 /* AppFeature */,
 			);
 			productName = GithubUsers;
 			productReference = A68DB5232DF267B2003FA815 /* GitHubUsers.app */;
@@ -146,6 +152,9 @@
 			);
 			mainGroup = A68DB51A2DF267B2003FA815;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A68FC3AF2DF5320F005E3E39 /* XCLocalSwiftPackageReference "../../GitHubUsers" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A68DB5242DF267B2003FA815 /* Products */;
 			projectDirPath = "";
@@ -448,6 +457,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A68FC3AF2DF5320F005E3E39 /* XCLocalSwiftPackageReference "../../GitHubUsers" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../GitHubUsers;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A68FC3B02DF5320F005E3E39 /* AppFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A68DB51B2DF267B2003FA815 /* Project object */;
 }
