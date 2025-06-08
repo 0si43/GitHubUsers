@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum APIError: LocalizedError {
+public enum APIError: LocalizedError {
     case invalidResponse
     case httpError(Int)
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .invalidResponse:
             return "無効なレスポンスです"
