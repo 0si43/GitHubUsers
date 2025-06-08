@@ -90,11 +90,11 @@ fastlane/test_output
 iOSInjectionProject/
 
 # other
-*.xcworkspace/*
-!*.xcworkspace/contents.xcworkspacedata 
-xcuserdata
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
+**/*.xcworkspace/*
+!**/*.xcworkspace/contents.xcworkspacedata
+**/xcuserdata/
+**/*.xcodeproj/*
+!**/*.xcodeproj/project.pbxproj
 *.ipa
 *.zip
 Build
