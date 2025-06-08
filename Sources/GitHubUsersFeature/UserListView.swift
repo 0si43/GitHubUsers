@@ -7,6 +7,7 @@
 
 import Models
 import SwiftUI
+import UIComponents
 
 public struct UserListView: View {
     @Bindable private var viewModel: UserListViewModel
@@ -16,11 +17,22 @@ public struct UserListView: View {
 
     public var body: some View {
         NavigationStack {
-            List(viewModel.users) { user in
-                NavigationLink(value: user) {
-                     UserRowView(user: user)
+            List {
+                ForEach(viewModel.users) { user in
+                    NavigationLink(value: user) {
+                        UserRowView(user: user)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
+
+                if !viewModel.users.isEmpty {
+                    LoadMoreFooterView()
+                    .onAppear {
+                        Task {
+                            await viewModel.fetchNextUsers()
+                        }
+                    }
+                }
             }
             .refreshable {
                 await viewModel.fetchUsers()

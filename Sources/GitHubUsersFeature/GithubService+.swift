@@ -12,7 +12,7 @@ import Models
 
 class GitHubServiceMock: GitHubServiceProtocol {
     var stubUsers: [GitHubUser] = []
-    func fetchUsers(pageNumber: Int) async throws -> [GitHubUser] {
+    func fetchUsers(startId: Int) async throws -> [GitHubUser] {
         stubUsers
     }
     

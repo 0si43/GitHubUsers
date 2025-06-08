@@ -14,6 +14,7 @@ var package = Package(
   ],
   products: [
     .library(name: "GitHubUsersFeature", targets: ["GitHubUsersFeature"]),
+    .library(name: "UIComponents", targets: ["UIComponents"]),
   ],
   targets: [
     .target(
