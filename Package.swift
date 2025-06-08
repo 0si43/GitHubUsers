@@ -5,7 +5,7 @@ import PackageDescription
 
 // MARK: - shared
 var package = Package(
-  name: "AppFeature",
+  name: "GitHubUsersFeature",
   platforms: [
     .iOS(.v17),
     .macOS(.v14),
@@ -13,17 +13,11 @@ var package = Package(
     .watchOS(.v10),
   ],
   products: [
-    .library(name: "AppFeature", targets: ["AppFeature"]),
+    .library(name: "GitHubUsersFeature", targets: ["GitHubUsersFeature"]),
   ],
   targets: [
     .target(
-      name: "AppFeature",
-      dependencies: [
-        "GitHubUsers",
-      ]
-    ),
-    .target(
-      name: "GitHubUsers",
+      name: "GitHubUsersFeature",
       dependencies: [
         "API",
         "Models",
@@ -31,9 +25,9 @@ var package = Package(
       ]
     ),
     .testTarget(
-      name: "GitHubUsersTests",
+      name: "GitHubUsersFeatureTests",
       dependencies: [
-        "GitHubUsers"
+        "GitHubUsersFeature"
       ]
     ),
     .target(

@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A68DB5222DF267B2003FA815"
+               BlueprintIdentifier = "A645D5DD2DF53F8A003DC770"
                BuildableName = "GitHubUsers.app"
                BlueprintName = "GitHubUsers"
                ReferencedContainer = "container:GitHubUsers.xcodeproj">
@@ -35,7 +35,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A68DB52F2DF267B3003FA815"
+               BlueprintIdentifier = "A645D5E92DF53F8B003DC770"
                BuildableName = "GitHubUsersTests.xctest"
                BlueprintName = "GitHubUsersTests"
                ReferencedContainer = "container:GitHubUsers.xcodeproj">
@@ -49,6 +49,17 @@
                BlueprintIdentifier = "A68DB5392DF267B3003FA815"
                BuildableName = "GithubUsersUITests.xctest"
                BlueprintName = "GithubUsersUITests"
+               ReferencedContainer = "container:GitHubUsers.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A645D5F32DF53F8B003DC770"
+               BuildableName = "GitHubUsersUITests.xctest"
+               BlueprintName = "GitHubUsersUITests"
                ReferencedContainer = "container:GitHubUsers.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -68,7 +79,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A68DB5222DF267B2003FA815"
+            BlueprintIdentifier = "A645D5DD2DF53F8A003DC770"
             BuildableName = "GitHubUsers.app"
             BlueprintName = "GitHubUsers"
             ReferencedContainer = "container:GitHubUsers.xcodeproj">
@@ -92,7 +103,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A68DB5222DF267B2003FA815"
+            BlueprintIdentifier = "A645D5DD2DF53F8A003DC770"
             BuildableName = "GitHubUsers.app"
             BlueprintName = "GitHubUsers"
             ReferencedContainer = "container:GitHubUsers.xcodeproj">
