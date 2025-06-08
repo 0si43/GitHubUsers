@@ -5,11 +5,11 @@
 //  Created by Nakajima on 2025/06/06.
 //
 
-import GitHubUsersFeature
+import GitHubUsers
 import SwiftUI
 
 @main
-struct GitHubUsersApp: App {
+struct MainApp: App {
     var body: some Scene {
         WindowGroup {
             UserListView(
