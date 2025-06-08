@@ -32,5 +32,17 @@ struct UserDetailViewModelTest {
         await userDetailViewModel.fetchRepositories()
         #expect(userDetailViewModel.repositories == repositories)
     }
-    
+
+    @Test func hideForkRepository() async throws {
+        let repositories = [
+            GitHubRepository(name: "not forked", stargazersCount: 1, fork: false, htmlUrl: ""),
+            GitHubRepository(name: "forked", stargazersCount: 1, fork: true, htmlUrl: "")
+        ]
+        let user = GitHubUser.mock(id: 1)
+        userDetailViewModel.user = user
+        gitHubServiceMock.stubRepositories = repositories
+        await userDetailViewModel.fetchRepositories()
+        #expect(userDetailViewModel.nonForkedRepositories.first?.name == "not forked")
+        #expect(userDetailViewModel.nonForkedRepositories.count == 1)
+    }
 }
