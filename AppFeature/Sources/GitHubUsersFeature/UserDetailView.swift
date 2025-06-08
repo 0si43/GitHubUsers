@@ -14,10 +14,6 @@ struct UserDetailView: View {
     init(viewModel: UserDetailViewModel) {
         self.viewModel = viewModel
     }
-    
-    private var nonForkedRepositories: [GitHubRepository] {
-        viewModel.repositories.filter { !$0.fork }
-    }
 
     var body: some View {
         ScrollView {
@@ -25,7 +21,7 @@ struct UserDetailView: View {
                 if let user = viewModel.user {
                     userInfoSection(user: user)
                 }
-                if !nonForkedRepositories.isEmpty {
+                if !viewModel.nonForkedRepositories.isEmpty {
                     repositoriesSection
                 }
             }
@@ -106,13 +102,13 @@ struct UserDetailView: View {
 
     private var repositoriesSection: some View {
         LazyVStack(spacing: 0) {
-            ForEach(nonForkedRepositories.indices, id: \.self) { index in
-                let repository = nonForkedRepositories[index]
+            ForEach(viewModel.nonForkedRepositories.indices, id: \.self) { index in
+                let repository = viewModel.nonForkedRepositories[index]
                 NavigationLink(value: repository) {
                     repositoryRow(repository: repository)
                 }
                 .buttonStyle(.plain)
-                if index < nonForkedRepositories.count - 1 {
+                if index < viewModel.nonForkedRepositories.count - 1 {
                     Divider()
                         .padding(.leading, 16)
                 }

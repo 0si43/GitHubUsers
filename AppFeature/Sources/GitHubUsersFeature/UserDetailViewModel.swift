@@ -14,6 +14,10 @@ final class UserDetailViewModel {
     nonisolated private let gitHubService: GitHubServiceProtocol
     var user: GitHubUser?
     var repositories: [GitHubRepository] = []
+    var nonForkedRepositories: [GitHubRepository] {
+        repositories.filter { !$0.fork }
+    }
+
     var isLoading = false
     var showAlert = false
     var error: Error?
