@@ -26,7 +26,7 @@ struct UserDetailView: View {
                 repositoriesSection
             }
         }
-        .navigationTitle("Repositories")
+        .navigationTitle("Repositories".localized)
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -66,7 +66,7 @@ struct UserDetailView: View {
                                     Text("\(followers)")
                                         .font(.headline)
                                         .fontWeight(.semibold)
-                                    Text("Followers")
+                                    Text("Followers".localized)
                                         .font(.caption)
                                         .foregroundColor(.secondary)
                                 }
@@ -76,7 +76,7 @@ struct UserDetailView: View {
                                     Text("\(following)")
                                         .font(.headline)
                                         .fontWeight(.semibold)
-                                    Text("Following")
+                                    Text("Following".localized)
                                         .font(.caption)
                                         .foregroundColor(.secondary)
                                 }

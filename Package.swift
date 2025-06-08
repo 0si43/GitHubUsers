@@ -23,6 +23,9 @@ var package = Package(
         "API",
         "Models",
         "UIComponents",
+      ],
+      resources: [
+        .process("Resources")
       ]
     ),
     .testTarget(
