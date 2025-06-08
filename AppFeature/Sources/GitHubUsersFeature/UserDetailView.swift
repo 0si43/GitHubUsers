@@ -57,21 +57,21 @@ struct UserDetailView: View {
             }
             .frame(width: 80, height: 80)
             .clipShape(Circle())
-            
-            VStack() {
+
+            VStack {
                 Text(user.login)
                     .font(.title2)
                     .fontWeight(.bold)
-                
+
                 if let name = user.name, !name.isEmpty {
                     Text(name)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                         .padding(.bottom, 8)
                 }
-                
+
                 HStack(spacing: 24) {
-                    VStack() {
+                    VStack {
                         if let followers = user.followers {
                             Text("\(followers)")
                                 .font(.headline)
@@ -81,7 +81,7 @@ struct UserDetailView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
-                    VStack() {
+                    VStack {
                         if let following = user.following {
                             Text("\(following)")
                                 .font(.headline)

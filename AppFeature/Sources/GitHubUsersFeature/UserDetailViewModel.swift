@@ -25,7 +25,7 @@ final class UserDetailViewModel {
         self.userId = userId
         self.gitHubService = gitHubService
     }
-    
+
     func fetchUser() async {
         isLoading = true
         defer {
@@ -39,7 +39,7 @@ final class UserDetailViewModel {
             showAlert = true
         }
     }
-    
+
     func fetchRepositories() async {
         guard let user else { return }
         isLoading = true
@@ -53,6 +53,6 @@ final class UserDetailViewModel {
             self.error = error
             showAlert = true
         }
-        
+
     }
 }

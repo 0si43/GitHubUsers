@@ -1,4 +1,4 @@
-  // swift-tools-version:6.0
+// swift-tools-version:6.0
 
 import Foundation
 import PackageDescription
@@ -7,11 +7,11 @@ import PackageDescription
 var package = Package(
   name: "AppFeature",
   platforms: [
-    .iOS(.v18),
+    .iOS(.v17)
   ],
   products: [
     .library(name: "GitHubUsersFeature", targets: ["GitHubUsersFeature"]),
-    .library(name: "UIComponents", targets: ["UIComponents"]),
+    .library(name: "UIComponents", targets: ["UIComponents"])
   ],
   targets: [
     .target(
@@ -19,7 +19,7 @@ var package = Package(
       dependencies: [
         "API",
         "Models",
-        "UIComponents",
+        "UIComponents"
       ],
       resources: [
         .process("Resources")
@@ -39,5 +39,5 @@ var package = Package(
     ),
     .target(
       name: "UIComponents"
-    ),
-])
+    )
+  ])

@@ -23,7 +23,7 @@ public struct GitHubUser: Codable, Hashable, Identifiable, Sendable {
         self.followers = followers
         self.following = following
     }
-    
+
     public static func mock(id: Int) -> GitHubUser {
         .init(id: id, login: "login", avatarUrl: "avatarUrl", htmlUrl: "htmlUrl", name: "name", followers: 100, following: 100)
     }

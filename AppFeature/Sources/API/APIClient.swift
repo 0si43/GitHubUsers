@@ -17,9 +17,9 @@ public final class APIClient: APIClientProtocol {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }
-    
+
     public init() {}
-    
+
     public func send<T: Decodable>(_ request: URLRequest) async throws -> T {
         let (data, response) = try await URLSession.shared.data(for: request)
 
