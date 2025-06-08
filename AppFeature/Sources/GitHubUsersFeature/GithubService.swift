@@ -11,7 +11,7 @@ import Models
 
 struct GitHubAPIConfig {
     static let baseURL = "https://api.github.com"
-    
+
     static var authHeaders: [String: String] {
         if let personalAccessToken = ProcessInfo.processInfo.environment["GITHUB_PAT"], !personalAccessToken.isEmpty {
             [
@@ -28,12 +28,12 @@ struct GitHubAPIConfig {
     static func usersURL(since: Int) -> URL? {
         URL(string: "\(GitHubAPIConfig.baseURL)/users?since=\(since)")
     }
-    
+
     // https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#get-a-user-using-their-id
     static func userURL(for id: Int) -> URL? {
         URL(string: "\(GitHubAPIConfig.baseURL)/user/\(id)")
     }
-    
+
     // https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user
     static func repositoriesURL(username: String) -> URL? {
         URL(string: "\(GitHubAPIConfig.baseURL)/users/\(username)/repos")
@@ -51,7 +51,7 @@ public final class GitHubService: GitHubServiceProtocol {
     public init(apiClient: APIClientProtocol = APIClient()) {
         self.apiClient = apiClient
     }
-    
+
     public func fetchUsers(startId: Int) async throws -> [GitHubUser] {
         guard let url = GitHubAPIConfig.usersURL(since: startId) else { fatalError("confirm usersURL") }
         let request = makeRequest(url: url)
@@ -69,7 +69,7 @@ public final class GitHubService: GitHubServiceProtocol {
         let request = makeRequest(url: url)
         return try await apiClient.send(request)
     }
-    
+
     func makeRequest(url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         for (key, value) in GitHubAPIConfig.authHeaders {

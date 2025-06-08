@@ -28,7 +28,7 @@ public struct LoadingViewModifier: ViewModifier {
 }
 
 private struct CommonProgressViewStyle: ProgressViewStyle {
-    public func makeBody(configuration: Configuration) -> some View {
+    func makeBody(configuration: Configuration) -> some View {
         VStack(spacing: 0) {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .white))

@@ -15,7 +15,7 @@ class GitHubServiceMock: GitHubServiceProtocol, @unchecked Sendable {
     func fetchUsers(startId: Int) async throws -> [GitHubUser] {
         stubUsers
     }
-    
+
     var stubUser: GitHubUser?
     func fetchUser(id _: Int) async throws -> GitHubUser {
         if let stubUser {
@@ -24,7 +24,7 @@ class GitHubServiceMock: GitHubServiceProtocol, @unchecked Sendable {
             throw NSError()
         }
     }
-    
+
     var stubRepositories: [GitHubRepository] = []
     func fetchRepositories(username: String) async throws -> [GitHubRepository] {
         stubRepositories

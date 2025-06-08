@@ -12,11 +12,11 @@ import Testing
 struct UserDetailViewModelTest {
     let gitHubServiceMock: GitHubServiceMock = .init()
     let userDetailViewModel: UserDetailViewModel
-    
+
     init() {
         userDetailViewModel = UserDetailViewModel(userId: 1, gitHubService: gitHubServiceMock)
     }
-    
+
     @Test func fetchUser() async throws {
         let user = GitHubUser.mock(id: 1)
         gitHubServiceMock.stubUser = user

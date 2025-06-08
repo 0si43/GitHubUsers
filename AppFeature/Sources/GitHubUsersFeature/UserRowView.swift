@@ -12,7 +12,7 @@ struct UserRowView: View {
     let user: GitHubUser
 
     var body: some View {
-        HStack() {
+        HStack {
             AsyncImage(url: URL(string: user.avatarUrl)) { image in
                 image
                     .resizable()
