@@ -33,6 +33,7 @@ struct UserDetailView: View {
         .navigationTitle("Repositories".localized)
         .navigationBarTitleDisplayMode(.inline)
         .loading($viewModel.isLoading)
+        .showAlert($viewModel.showAlert, error: viewModel.error)
         .task {
             await viewModel.fetchUser()
             await viewModel.fetchRepositories()

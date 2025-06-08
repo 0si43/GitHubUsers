@@ -15,7 +15,8 @@ final class UserDetailViewModel {
     var user: GitHubUser?
     var repositories: [GitHubRepository] = []
     var isLoading = false
-    var errorMessage: String?
+    var showAlert = false
+    var error: Error?
     init(userId: Int, gitHubService: GitHubServiceProtocol) {
         self.userId = userId
         self.gitHubService = gitHubService
@@ -30,7 +31,8 @@ final class UserDetailViewModel {
         do {
             user = try await gitHubService.fetchUser(id: userId)
         } catch {
-            print(error)
+            self.error = error
+            showAlert = true
         }
     }
     
@@ -44,7 +46,8 @@ final class UserDetailViewModel {
         do {
             repositories = try await gitHubService.fetchRepositories(username: user.login)
         } catch {
-            print(error)
+            self.error = error
+            showAlert = true
         }
         
     }
