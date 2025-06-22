@@ -1,6 +1,6 @@
-# GithubUsers
+# GitHubUsers
 
-- Github User List App
+- GitHub User List App
 - MVVM + Service
 
 # UI
