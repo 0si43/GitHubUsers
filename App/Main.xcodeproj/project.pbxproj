@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A671F2E62DF59681001E451B /* AppFeature in Resources */ = {isa = PBXBuildFile; fileRef = A671F2E52DF59681001E451B /* AppFeature */; };
-		A6A2190C2DF59761009FB14E /* GitHubUsersFeature in Frameworks */ = {isa = PBXBuildFile; productRef = A6A2190B2DF59761009FB14E /* GitHubUsersFeature */; };
+		A6F2A79B2E1A459B00429BA6 /* GitHubUsersFeature in Frameworks */ = {isa = PBXBuildFile; productRef = A6F2A79A2E1A459B00429BA6 /* GitHubUsersFeature */; };
+		A6F2A79D2E1A459E00429BA6 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A6F2A79C2E1A459E00429BA6 /* UIComponents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A645D5DE2DF53F8A003DC770 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A671F2E52DF59681001E451B /* AppFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppFeature; path = ../AppFeature; sourceTree = SOURCE_ROOT; };
+		A671F2E52DF59681001E451B /* AppFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppFeature; path = ../; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -29,7 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6A2190C2DF59761009FB14E /* GitHubUsersFeature in Frameworks */,
+				A6F2A79D2E1A459E00429BA6 /* UIComponents in Frameworks */,
+				A6F2A79B2E1A459B00429BA6 /* GitHubUsersFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +82,8 @@
 			);
 			name = GitHubUsers;
 			packageProductDependencies = (
-				A6A2190B2DF59761009FB14E /* GitHubUsersFeature */,
+				A6F2A79A2E1A459B00429BA6 /* GitHubUsersFeature */,
+				A6F2A79C2E1A459E00429BA6 /* UIComponents */,
 			);
 			productName = GitHubUsers;
 			productReference = A645D5DE2DF53F8A003DC770 /* GitHubUsers.app */;
@@ -128,7 +130,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A671F2E62DF59681001E451B /* AppFeature in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,9 +351,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A6A2190B2DF59761009FB14E /* GitHubUsersFeature */ = {
+		A6F2A79A2E1A459B00429BA6 /* GitHubUsersFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = GitHubUsersFeature;
+		};
+		A6F2A79C2E1A459E00429BA6 /* UIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIComponents;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
