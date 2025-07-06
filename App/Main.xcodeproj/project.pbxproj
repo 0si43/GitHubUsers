@@ -16,9 +16,22 @@
 		A671F2E52DF59681001E451B /* AppFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppFeature; path = ../; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A6339A3C2E1AA30A006660C9 /* Exceptions for "Main" folder in "GitHubUsers" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A645D5DD2DF53F8A003DC770 /* GitHubUsers */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A645D5DF2DF53F8A003DC770 /* Main */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A6339A3C2E1AA30A006660C9 /* Exceptions for "Main" folder in "GitHubUsers" target */,
+			);
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -156,6 +169,7 @@
 				DEVELOPMENT_TEAM = JDTR4Y333X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -185,6 +199,7 @@
 				DEVELOPMENT_TEAM = JDTR4Y333X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
