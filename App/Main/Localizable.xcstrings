@@ -1,0 +1,18 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Dummy" : {
+      "comment" : "SPMモジュールにローカライズ設定渡すために必要",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダミー"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
