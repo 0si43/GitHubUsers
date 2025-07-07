@@ -13,7 +13,7 @@
 
 /* Begin PBXFileReference section */
 		A645D5DE2DF53F8A003DC770 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A671F2E52DF59681001E451B /* AppFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppFeature; path = ../; sourceTree = SOURCE_ROOT; };
+		A671F2E52DF59681001E451B /* AppFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppFeature; path = .; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
